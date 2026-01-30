@@ -7,13 +7,13 @@
 .wrapperContainer {
   width: 1200px;
   height: fit-content;
-  margin: 50px 0 50px 0;
 }
 
 .wrapperSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  margin-top: 50px;
 }
 
 .wrapperImage {
@@ -39,4 +39,13 @@
 
 .wrapperDescr p {
   line-height: 24.5px;
-} 
+}
+
+.wrapperDescrKeyPhrase {
+  padding-left: 35px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  line-height: 30px;
+  border-left: 2px solid #e6792c;
+}
