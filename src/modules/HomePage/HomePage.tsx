@@ -1,6 +1,9 @@
 import React from 'react';
 import styles from './HomePage.module.css';
 import yuliyaPolikarpova from '../../resources/img/partner-psiholog-yuliya-polikarpova.jpg'
+import fotoPsihologa from '../../resources/img/foto-psihologa-yulii-polikarpovoj.jpg'
+import displom from '../../resources/swiper/displom-psihologa-yulii-polikarpovoj.jpg'
+import { SliderBanner } from './SliderBanner/SliderBanner';
 
 export const HomePage = () => {
     return (
@@ -44,7 +47,29 @@ export const HomePage = () => {
                         </p>
                     </div>
                     <div className={styles.wrapperImage}>
-                        <img src={yuliyaPolikarpova} alt="yuliyaPolikarpova" />
+                        <img src={displom} alt="displom" />
+                        {/* <SliderBanner/> */}
+                    </div>
+                </div>
+                <div className={styles.wrapperSection}>
+                    <div className={styles.wrapperImage}>
+                        <img src={fotoPsihologa} alt="fotoPsihologa" />
+                    </div>
+                    <div className={styles.wrapperDescr}>
+                        <p>
+                            Внутренние конфликты расщепляют, разрушают и уводят от главной цели — быть счастливым.
+                        </p>
+                        <p className={styles.wrapperDescrKeyPhrase}>
+                            Обрести себя, увидеть себя и мир другими глазами, жить своей жизнью, избавиться от навязанных 
+                            сценариев и социального давления является необходимым условием для создания цельности личности. 
+                        </p>
+                        <p>
+                            Я могу тебя сопровождать в этом процессе бережно и с любовью. <strong>Мы вместе сможем восстановить твою природную самость, 
+                            найти внутренние опоры, избавиться от того что не дает двигаться вперед. </strong>Выход есть, и в этом понимании есть надежда 
+                            найти силы, чтобы помочь себе.
+                            <br /> <br />
+                            Сделай шаг и это будет начало твоей новой жизни! С любовью и принятием, твоя Юлия.
+                        </p>
                     </div>
                 </div>
             </div>
