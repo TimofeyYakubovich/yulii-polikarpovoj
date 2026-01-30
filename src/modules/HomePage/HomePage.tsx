@@ -3,7 +3,6 @@ import styles from './HomePage.module.css';
 import yuliyaPolikarpova from '../../resources/img/partner-psiholog-yuliya-polikarpova.jpg'
 import fotoPsihologa from '../../resources/img/foto-psihologa-yulii-polikarpovoj.jpg'
 import displom from '../../resources/swiper/displom-psihologa-yulii-polikarpovoj.jpg'
-import { SliderBanner } from './SliderBanner/SliderBanner';
 
 export const HomePage = () => {
     return (
@@ -48,7 +47,6 @@ export const HomePage = () => {
                     </div>
                     <div className={styles.wrapperImage}>
                         <img src={displom} alt="displom" />
-                        {/* <SliderBanner/> */}
                     </div>
                 </div>
                 <div className={styles.wrapperSection}>
