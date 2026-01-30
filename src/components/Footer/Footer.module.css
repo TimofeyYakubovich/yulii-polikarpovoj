@@ -1,0 +1,14 @@
+.wrapper {
+  padding: 3.08vh 1.3vw 2.75vh 1.3vw;
+  display: grid;
+  /* grid-template-columns: 563px 301px; */
+  /* grid-template-columns: 29.32vw 15.68vw; */
+  /* grid-template-columns: 30vw 25vw; */
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  font-weight: 400;
+  /* font-size: 24px; */
+  font-size: 2.64vh;
+  /* line-height: 30px; */
+  line-height: 3.3vh;
+}

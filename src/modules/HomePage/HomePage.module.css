@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapperContainer {
+  width: 1200px;
+  height: fit-content;
+  margin: 50px 0 50px 0;
+}
+
+.wrapperSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.wrapperImage {
+
+}
+
+.wrapperImage img {
+  width: 100%;
+  height: auto;
+}
+
+.wrapperDescr {
+
+}
+
+.wrapperDescr h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 60px;
+  margin-bottom: 10px;
+} 
+
+.wrapperDescr p {
+  line-height: 24.5px;
+} 
