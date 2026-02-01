@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(243, 247, 248);
 }
 
 .wrapperContainer {
@@ -56,4 +57,147 @@
   font-size: 18px;
   line-height: 30px;
   border-left: 2px solid #e6792c;
+}
+
+.messengerStrip {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  z-index: 1000;
+  background-color: rgba(47,75,86,1);
+}
+
+.stripContent {
+  width: 1500px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.messengerButton {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.messengerButton img {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* Кнопка "Наверх" */
+.scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: -70px; /* Скрыта за экраном справа */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Плавная анимация */
+    backdrop-filter: blur(5px);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    padding: 0;
+    opacity: 0;
+    transform: translateX(0) scale(0.8);
+}
+
+/* Класс для видимой кнопки */
+.scrollToTopButton.visible {
+    right: 20px; /* Показываем на экране */
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Ховер эффекты */
+.scrollToTopButton:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(160, 82, 45, 0.95); */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.scrollToTopButton:active {
+    transform: translateY(-2px) scale(0.98);
+    background-color: rgba(139, 69, 19, 1);
+}
+
+/* Ховер для видимой кнопки должен иметь трансформ */
+.scrollToTopButton.visible:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* Иконка стрелки */
+.arrowIcon {
+    width: 24px;
+    height: 24px;
+    color: rgb(0, 0, 0);
+    stroke-width: 2.5;
+    transition: transform 0.3s ease;
+}
+
+.scrollToTopButton:hover .arrowIcon {
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .scrollToTopButton {
+        bottom: 80px;
+        width: 50px;
+        height: 50px;
+        right: -60px; /* Скрыта за экраном */
+    }
+    
+    .scrollToTopButton.visible {
+        right: 20px; /* Показываем на экране */
+    }
+    
+    .arrowIcon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scrollToTopButton {
+        bottom: 70px;
+        width: 45px;
+        height: 45px;
+        right: -55px;
+    }
+    
+    .scrollToTopButton.visible {
+        right: 15px;
+    }
+    
+    .arrowIcon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 400px) {
+    .scrollToTopButton {
+        bottom: 150px; /* Выше если полоска вертикальная */
+    }
 }

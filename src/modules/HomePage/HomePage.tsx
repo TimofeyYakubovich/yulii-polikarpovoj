@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
 import yuliyaPolikarpova from '../../resources/img/partner-psiholog-yuliya-polikarpova.jpg'
 import fotoPsihologa from '../../resources/img/foto-psihologa-yulii-polikarpovoj.jpg'
 import displom from '../../resources/swiper/displom-psihologa-yulii-polikarpovoj.jpg'
+import telega from '../../resources/messengers/telega.png'
+import viber from '../../resources/messengers/viber.png'
+import whatsapp from '../../resources/messengers/whatsapp.png'
 
 export const HomePage = () => {
+    const [showScrollButton, setShowScrollButton] = useState(false);
+
+    const checkScroll = () => {
+
+        if (window.scrollY > 90) {
+            setShowScrollButton(true);
+        } else {
+            setShowScrollButton(false);
+        }
+
+    };
+
+    const scrollToTop = () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    };
+
+    useEffect(() => {
+        
+        window.addEventListener('scroll', checkScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', checkScroll);
+        };
+
+    }, []);
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapperContainer}>
@@ -71,6 +105,41 @@ export const HomePage = () => {
                     </div>
                 </div>
             </div>
+            <div className={styles.messengerStrip}>
+                <div className={styles.stripContent}>
+                    <a className={styles.messengerButton} href="https://t.me/+375336057939">
+                        <img src={telega} alt="telega" />
+                        <span className={styles.buttonText}>Написать в Telegram</span>
+                    </a>
+                    <a className={styles.messengerButton} href="viber://chat?number=%2B375336057939">
+                        <img src={viber} alt="viber" />
+                        <span className={styles.buttonText}>Написать в Viber</span>
+                    </a>
+                    <a className={styles.messengerButton} href="https://wa.me/375336057939">
+                        <img src={whatsapp} alt="whatsapp" />
+                        <span className={styles.buttonText}>Написать в WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+            <button 
+                className={`${styles.scrollToTopButton} ${showScrollButton ? styles.visible : ''}`}
+                onClick={scrollToTop}
+                aria-label="Прокрутить наверх"
+            >
+                <svg 
+                    className={styles.checkIcon} 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor"
+                >
+                    <path 
+                        d="M8 14L12 10L16 14" 
+                        strokeWidth="1" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                    />
+                </svg>
+            </button>
         </div>
     );
 };

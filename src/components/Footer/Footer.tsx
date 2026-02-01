@@ -27,15 +27,9 @@ export const Footer = () => {
                         <a href="/">
                              Групповая терапия
                         </a>
-                        <a href="/">
-                             Обучение
-                        </a>
                     </div>
                     <div className={styles.informationSection}>
                         <h1>ИНФОРМАЦИЯ</h1>
-                        <a href="/">
-                             О центре
-                        </a>
                         <a href="/">
                              Новости
                         </a>

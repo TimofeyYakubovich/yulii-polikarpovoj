@@ -45,18 +45,6 @@ export const Header = () => {
                         to='/'
                         end
                     >
-                        О центре
-                    </NavLink>
-                    <NavLink
-                        to='/'
-                        end
-                    >
-                        Обучение
-                    </NavLink>
-                    <NavLink
-                        to='/'
-                        end
-                    >
                         Контакты
                     </NavLink>
                 </div>
