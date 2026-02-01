@@ -6,7 +6,7 @@ import logo from '../../resources/logo/logo_4.png'
 export const Header = () => {
 
     return (
-        <div className={styles.wrapper}>
+        <header className={styles.header}>
             <div className={styles.wrapperContainer}>
                 <div className={styles.wrapperLogo}>
                     <NavLink
@@ -54,6 +54,6 @@ export const Header = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };

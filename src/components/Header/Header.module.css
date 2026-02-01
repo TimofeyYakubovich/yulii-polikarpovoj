@@ -1,4 +1,9 @@
-.wrapper {
+.header {
+  position: fixed; /* Фиксируем позицию */
+  top: 0; /* Прижимаем к верху */
+  left: 0; /* Прижимаем к левому краю */
+  right: 0; /* Растягиваем на всю ширину */
+  z-index: 1100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +34,7 @@
 .wrapperSection {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
