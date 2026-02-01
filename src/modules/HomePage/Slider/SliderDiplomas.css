@@ -1,0 +1,126 @@
+.sliderContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* border-radius: 25px; */
+    overflow: hidden;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    /* overflow: visible !important; */
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+
+.diplomaImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 500px;
+    /* padding: 10px; */
+    border-radius: 15px;
+}
+
+/* Навигационные кнопки */
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+    
+    /* Ваши стили для стрелок */
+    color: #8B4513 !important;
+    background: transparent !important;
+    width: 60px !important;
+    height: 60px !important;
+    border: none !important;
+    opacity: 0 !important;
+    transition: all 0.5s ease !important;
+}
+
+/* Левая кнопка слева от .swiper */
+.swiper-button-prev {
+    left: -80px !important; /* За пределами .swiper */
+    transform: translateY(-50%) translateX(-30px) scale(0.5) !important;
+}
+
+/* Правая кнопка справа от .swiper */
+.swiper-button-next {
+    right: -80px !important; /* За пределами .swiper */
+    transform: translateY(-50%) translateX(30px) scale(0.5) !important;
+}
+
+/* При наведении на контейнер */
+.sliderContainer:hover .swiper-button-prev {
+    left: -60px !important;
+    opacity: 1 !important;
+    transform: translateY(-50%) translateX(0) scale(1) !important;
+}
+
+.sliderContainer:hover .swiper-button-next {
+    right: -60px !important;
+    opacity: 1 !important;
+    transform: translateY(-50%) translateX(0) scale(1) !important;
+}
+
+/* Пагинация */
+
+.swiper-pagination {
+    position: absolute !important;
+    bottom: 0 !important; /* Располагаем на 40px ниже слайдера */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    /* right: 0 !important; */
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    /* background: rgb(255, 255, 255); */
+    background: white !important; /* Белая заливка */
+    border: 2px solid #999 !important;
+    opacity: 1;
+    background-repeat: 1px solid black;
+}
+
+.swiper-pagination-bullet-active {
+    background: #000000;
+    transform: scale(1.2);
+}
+
+.sliderCaption {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .diplomaImage {
+        max-height: 300px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 16px;
+    }
+}

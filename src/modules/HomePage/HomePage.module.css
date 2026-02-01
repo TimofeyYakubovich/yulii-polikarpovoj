@@ -14,14 +14,16 @@
 
 .wrapperSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   gap: 30px;
   margin-top: 50px;
+  /* overflow: visible !important; */
 }
 
 .wrapperImage {
   width: 100%;
   height: auto;
+  /* overflow: visible !important; */
 }
 
 .wrapperImage img {

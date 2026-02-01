@@ -6,6 +6,7 @@ import displom from '../../resources/swiper/displom-psihologa-yulii-polikarpovoj
 import telega from '../../resources/messengers/telega.png'
 import viber from '../../resources/messengers/viber.png'
 import whatsapp from '../../resources/messengers/whatsapp.png'
+import { SliderDiplomas } from './Slider/SliderDiplomas';
 
 export const HomePage = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -61,7 +62,7 @@ export const HomePage = () => {
                     </div>
                 </div>
                 <div className={styles.wrapperSection}>
-                    <div className={styles.wrapperDescr}>
+                    <div className={styles.wrapperDescr} style={{paddingRight: '20px'}}>
                         <h1>Мой опыт работы</h1>
                         <p>
                             С 2013 года являюсь <strong>преподавателем йоги, веду групповые и индивидуальные занятия. </strong> 
@@ -80,7 +81,8 @@ export const HomePage = () => {
                         </p>
                     </div>
                     <div className={styles.wrapperImage}>
-                        <img src={displom} alt="displom" />
+                        {/* <img src={displom} alt="displom" /> */}
+                        <SliderDiplomas />
                     </div>
                 </div>
                 <div className={styles.wrapperSection}>
