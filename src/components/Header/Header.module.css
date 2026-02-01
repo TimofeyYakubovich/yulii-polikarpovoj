@@ -19,16 +19,20 @@
 }
 
 .wrapperLogo {
-  width: 188px;
-  height: 90px;
+  /* width: 188px;
+  height: 90px; */
+  width: 238px;
+  height: 190px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .wrapperLogo a img {
-  width: 168.75px;
-  height: 82px;
+  /* width: 168.75px;
+  height: 82px; */
+  width: 90%;
+  height: 90%;
 }
 
 .wrapperSection {
