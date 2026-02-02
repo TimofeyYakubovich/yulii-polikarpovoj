@@ -6,3 +6,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.swiper-slide-active {
+  visibility: visible !important;
+}
+
+.swiper-slide-next {
+  visibility: visible !important;
+}
