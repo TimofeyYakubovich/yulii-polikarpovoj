@@ -6,7 +6,7 @@ import displom from '../../resources/swiper/displom-psihologa-yulii-polikarpovoj
 import telega from '../../resources/messengers/telega.png'
 import viber from '../../resources/messengers/viber.png'
 import whatsapp from '../../resources/messengers/whatsapp.png'
-import { SliderDiplomas } from './Slider/SliderDiplomas';
+// import { SliderDiplomas } from './Slider/SliderDiplomas';
 
 export const HomePage = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -81,8 +81,8 @@ export const HomePage = () => {
                         </p>
                     </div>
                     <div className={styles.wrapperImage}>
-                        {/* <img src={displom} alt="displom" /> */}
-                        <SliderDiplomas />
+                        <img src={displom} alt="displom" />
+                        {/* <SliderDiplomas /> */}
                     </div>
                 </div>
                 <div className={styles.wrapperSection}>
