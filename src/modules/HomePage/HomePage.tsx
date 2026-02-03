@@ -8,8 +8,27 @@ import viber from '../../resources/messengers/viber.png'
 import whatsapp from '../../resources/messengers/whatsapp.png'
 // import { SliderDiplomas } from './Slider/SliderDiplomas';
 
+import diploma1 from '../../resources/swiper/displom-psihologa-yulii-polikarpovoj.jpg';
+import diploma2 from '../../resources/swiper/sertifikat-psihologa-yulii-polikarpovoj-1.jpg';
+import diploma3 from '../../resources/swiper/sertifikat-psihologa-yulii-polikarpovoj-2.jpg';
+import diploma4 from '../../resources/swiper/sertifikat-psihologa-yulii-polikarpovoj-3.jpg';
+import diploma5 from '../../resources/swiper/sertifikat-psihologa-yulii-polikarpovoj-4.jpg';
+import diploma6 from '../../resources/swiper/sertifikat-psihologa-yulii-polikarpovoj-5.jpg';
+import diploma7 from '../../resources/swiper/udostoverenie-psihologa-yulii-polikarpovoj.jpg';
+import { ManualSlider } from './ManualSlider/ManualSlider';
+
 export const HomePage = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
+
+    const diplomaSlides  = [
+        { id: 1, src: diploma1, alt: 'diploma1' },
+        { id: 2, src: diploma2, alt: 'diploma2' },
+        { id: 3, src: diploma3, alt: 'diploma3' },
+        { id: 4, src: diploma4, alt: 'diploma4' },
+        { id: 5, src: diploma5, alt: 'diploma5' },
+        { id: 6, src: diploma6, alt: 'diploma6' },
+        { id: 7, src: diploma7, alt: 'diploma7' },
+    ];
 
     const checkScroll = () => {
 
@@ -81,8 +100,9 @@ export const HomePage = () => {
                         </p>
                     </div>
                     <div className={styles.wrapperImage}>
-                        <img src={displom} alt="displom" />
+                        {/* <img src={displom} alt="displom" /> */}
                         {/* <SliderDiplomas /> */}
+                        <ManualSlider slides={diplomaSlides} />
                     </div>
                 </div>
                 <div className={styles.wrapperSection}>
