@@ -1,14 +1,14 @@
 .header {
-  position: fixed; /* Фиксируем позицию */
-  top: 0; /* Прижимаем к верху */
-  left: 0; /* Прижимаем к левому краю */
-  right: 0; /* Растягиваем на всю ширину */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1100;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90px;
-  background-color: rgba(47,75,86,1);
+  background-color: rgba(47, 75, 86, 1);
 }
 
 .wrapperContainer {
@@ -19,8 +19,6 @@
 }
 
 .wrapperLogo {
-  /* width: 188px;
-  height: 90px; */
   width: 238px;
   height: 190px;
   display: flex;
@@ -29,8 +27,6 @@
 }
 
 .wrapperLogo a img {
-  /* width: 168.75px;
-  height: 82px; */
   width: 90%;
   height: 90%;
 }
@@ -49,8 +45,95 @@
   color: rgb(255, 255, 255);
   text-decoration: none;
   text-transform: uppercase;
+  position: relative;
+  padding: 5px 0;
+  
+  /* Плавный переход для цвета текста */
+  transition: color 0.3s ease;
 }
 
+/* Подчеркивание для ссылок */
+.wrapperSection a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ff9045; /* Оранжевый цвет */
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Анимация при наведении */
+.wrapperSection a:hover {
+  color: #ffffffbe; /* Светло-желтый при наведении */
+}
+
+.wrapperSection a:hover::after {
+  width: 100%;
+}
+
+/* Активная ссылка (если используете NavLink с activeClassName) */
+.wrapperSection a.active {
+  color: #ffcc00;
+}
+
+.wrapperSection a.active::after {
+  width: 100%;
+}
+
+/* Альтернативный вариант с плавным появлением */
+/* .wrapperSection a.alternative::after {
+  content: '';
+  position: absolute;
+  bottom: 0; */
+  /*left: 50%;  Начинаем с центра */
+  /* width: 0;
+  height: 2px;
+  background-color: #ff6600;
+  transition: all 0.3s ease;
+  transform: translateX(-50%); */
+/* } */
+
+.wrapperSection a.alternative:hover::after {
+  width: 100%;
+}
+
+/* Вариант с анимацией из центра в стороны */
+/* .wrapperSection a.center-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ff6600;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+} */
+
+.wrapperSection a.center-animation:hover::after {
+  width: 100%;
+}
+
+/* Вариант с задержкой перед исчезновением */
+.wrapperSection a.delayed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff6600;
+  transition: width 0.3s ease-in-out 0.1s; /* Задержка при появлении */
+}
+
+.wrapperSection a.delayed:hover::after {
+  width: 100%;
+  transition: width 0.3s ease-in-out; /* Без задержки при скрытии */
+}
+
+/* Номер телефона - без анимации подчеркивания */
 .wrapperPhone {
   font-style: normal;
   font-weight: 600;
@@ -61,4 +144,42 @@
 .wrapperPhone a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+  position: relative;
+}
+
+/* Если хотите другую анимацию для телефона */
+.wrapperPhone a::after {
+  display: none; /* Убираем подчеркивание для телефона */
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .wrapperContainer {
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .wrapperSection {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+  
+  .wrapperLogo {
+    width: 180px;
+    height: 140px;
+  }
+  
+  .wrapperSection {
+    font-size: 12px;
+    gap: 15px;
+  }
+  
+  .wrapperPhone {
+    font-size: 14px;
+  }
 }

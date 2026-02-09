@@ -61,7 +61,7 @@ export const ManualSlider: React.FC<SwiperProps> = ({ slides }) => {
         onClick={goToPrev}
         aria-label="Предыдущий слайд"
       >
-        ‹
+        {/* ‹ */}
       </button>
       
       <button
@@ -69,7 +69,7 @@ export const ManualSlider: React.FC<SwiperProps> = ({ slides }) => {
         onClick={goToNext}
         aria-label="Следующий слайд"
       >
-        ›
+        {/* › */}
       </button>
 
       {/* Пагинация */}
