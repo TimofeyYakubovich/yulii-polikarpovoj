@@ -36,6 +36,7 @@
   object-fit: contain;
 }
 
+/* ===== КНОПКИ НАВИГАЦИИ ===== */
 .swiperButton {
   position: absolute;
   top: 50%;
@@ -51,9 +52,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  
   opacity: 0;
   visibility: hidden;
 }
@@ -111,6 +110,7 @@
   border-color: #000;
 }
 
+/* ===== ПАГИНАЦИЯ ===== */
 .swiperPagination {
   position: absolute;
   bottom: 5px;
@@ -127,10 +127,10 @@
   height: 10px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(136, 133, 133, 0.5);
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease;
-  border-color: rgba(136, 133, 133, 0.5);
 }
 
 .swiperPaginationDot:hover {
@@ -144,14 +144,151 @@
   border: none;
 }
 
+/* ===== ТЕКСТ ПОД СЛАЙДЕРОМ ===== */
+.swiperText {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 14px;
+  color: #2f4b56;
+  /* background-color: rgba(47, 75, 86, 1); */
+}
+
+.swiperText span {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================ */
+/* ===== АДАПТИВНОСТЬ ===== */
+/* ============================================ */
+
+/* Десктоп: 1200px и выше */
+@media (max-width: 1200px) {
+  .swiperButton {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .swiperButtonPrev {
+    left: -40px;
+  }
+  
+  .swiperButtonNext {
+    right: -40px;
+  }
+  
+  .swiperButtonPrev::after,
+  .swiperButtonNext::after {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .swiperText {
+    font-size: 13px;
+  }
+}
+
+/* Ноутбуки: 992px - 1199px */
+@media (max-width: 992px) {
+  .swiperButton {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .swiperButtonPrev {
+    left: -35px;
+  }
+  
+  .swiperButtonNext {
+    right: -35px;
+  }
+  
+  .swiperButtonPrev::after,
+  .swiperButtonNext::after {
+    width: 13px;
+    height: 13px;
+  }
+  
+  .swiperPagination {
+    gap: 8px;
+  }
+  
+  .swiperPaginationDot {
+    width: 9px;
+    height: 9px;
+  }
+  
+  .swiperText {
+    bottom: -22px;
+    font-size: 12px;
+  }
+}
+
+/* Планшеты: 768px - 991px */
 @media (max-width: 768px) {
   .swiperButton {
     width: 35px;
     height: 35px;
-    font-size: 20px;
     opacity: 0.7;
     visibility: visible;
     transform: translateY(-50%) translateX(0) !important;
+  }
+  
+  .swiperButtonPrev {
+    left: 10px;
+  }
+  
+  .swiperButtonNext {
+    right: 10px;
+  }
+  
+  .swiperButtonPrev::after,
+  .swiperButtonNext::after {
+    width: 13px;
+    height: 13px;
+    border-width: 2px;
+  }
+  
+  .swiperContainer:hover .swiperButton {
+    opacity: 1;
+  }
+  
+  .swiperPagination {
+    bottom: 10px;
+    gap: 8px;
+  }
+  
+  .swiperPaginationDot {
+    width: 9px;
+    height: 9px;
+  }
+  
+  .swiperPaginationDotActive {
+    transform: scale(1.25);
+  }
+  
+  .swiperText {
+    bottom: -22px;
+    font-size: 12px;
+  }
+  
+  .swiperText span {
+    padding: 3px 10px;
+  }
+}
+
+/* Мобильные L: 576px - 767px */
+@media (max-width: 576px) {
+  .swiperButton {
+    width: 32px;
+    height: 32px;
   }
   
   .swiperButtonPrev {
@@ -162,26 +299,88 @@
     right: 8px;
   }
   
-  .swiperContainer:hover .swiperButton {
-    opacity: 1;
+  .swiperButtonPrev::after,
+  .swiperButtonNext::after {
+    width: 12px;
+    height: 12px;
+    border-width: 1.8px;
   }
   
   .swiperPagination {
-    bottom: 12px;
+    bottom: 8px;
     gap: 8px;
   }
   
   .swiperPaginationDot {
-    width: 9px;
-    height: 9px;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .swiperPaginationDotActive {
+    transform: scale(1.2);
+  }
+  
+  .swiperText {
+    bottom: -20px;
+    font-size: 11px;
+  }
+  
+  .swiperText span {
+    padding: 3px 8px;
   }
 }
 
+/* Мобильные S: 480px и ниже */
 @media (max-width: 480px) {
   .swiperButton {
     width: 30px;
     height: 30px;
-    font-size: 18px;
+  }
+  
+  .swiperButtonPrev {
+    left: 6px;
+  }
+  
+  .swiperButtonNext {
+    right: 6px;
+  }
+  
+  .swiperButtonPrev::after,
+  .swiperButtonNext::after {
+    width: 11px;
+    height: 11px;
+    border-width: 1.8px;
+  }
+  
+  .swiperPagination {
+    bottom: 6px;
+    gap: 6px;
+  }
+  
+  .swiperPaginationDot {
+    width: 7px;
+    height: 7px;
+  }
+  
+  .swiperPaginationDotActive {
+    transform: scale(1.2);
+  }
+  
+  .swiperText {
+    bottom: -18px;
+    font-size: 10px;
+  }
+  
+  .swiperText span {
+    padding: 2px 8px;
+  }
+}
+
+/* Мобильные XS: 360px и ниже */
+@media (max-width: 360px) {
+  .swiperButton {
+    width: 28px;
+    height: 28px;
   }
   
   .swiperButtonPrev {
@@ -192,20 +391,103 @@
     right: 5px;
   }
   
+  .swiperButtonPrev::after,
+  .swiperButtonNext::after {
+    width: 10px;
+    height: 10px;
+    border-width: 1.5px;
+  }
+  
   .swiperPagination {
-    bottom: 10px;
+    bottom: 5px;
+    gap: 5px;
   }
   
   .swiperPaginationDot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
+  }
+  
+  .swiperPaginationDotActive {
+    transform: scale(1.2);
+  }
+  
+  .swiperText {
+    bottom: -16px;
+    font-size: 9px;
+  }
+  
+  .swiperText span {
+    padding: 2px 6px;
   }
 }
 
+/* Большие десктопы: 1400px+ */
+@media (min-width: 1400px) {
+  .swiperButton {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .swiperButtonPrev {
+    left: -50px;
+  }
+  
+  .swiperButtonNext {
+    right: -50px;
+  }
+  
+  .swiperButtonPrev::after,
+  .swiperButtonNext::after {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .swiperPaginationDot {
+    width: 11px;
+    height: 11px;
+  }
+  
+  .swiperText {
+    bottom: -28px;
+    font-size: 15px;
+  }
+}
+
+/* Альбомная ориентация на планшетах */
+@media (max-width: 900px) and (orientation: landscape) {
+  .swiperButton {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .swiperPagination {
+    bottom: 8px;
+  }
+}
+
+/* ===== ТАЧ-УСТРОЙСТВА ===== */
 @media (hover: none) and (pointer: coarse) {
   .swiperButton {
     opacity: 0.7;
     visibility: visible;
     transform: translateY(-50%) translateX(0) !important;
+  }
+  
+  .swiperButtonPrev {
+    left: 10px;
+  }
+  
+  .swiperButtonNext {
+    right: 10px;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .swiperTrack,
+  .swiperButton,
+  .swiperPaginationDot {
+    transition: none;
   }
 }

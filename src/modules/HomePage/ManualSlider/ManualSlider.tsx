@@ -59,15 +59,13 @@ export const ManualSlider: React.FC<SwiperProps> = ({ slides }) => {
         className={`${styles.swiperButton} ${styles.swiperButtonPrev}`}
         onClick={goToPrev}
         aria-label="Предыдущий слайд"
-      >
-      </button>
+      />
       
       <button
         className={`${styles.swiperButton} ${styles.swiperButtonNext}`}
         onClick={goToNext}
         aria-label="Следующий слайд"
-      >
-      </button>
+      />
 
       <div className={styles.swiperPagination}>
         {slides.map((_, index) => (
@@ -80,6 +78,10 @@ export const ManualSlider: React.FC<SwiperProps> = ({ slides }) => {
             aria-label={`Перейти к слайду ${index + 1}`}
           />
         ))}
+      </div>
+
+      <div className={styles.swiperText}>
+        <span>Мои дипломы и сертификаты</span>
       </div>
     </div>
   );
