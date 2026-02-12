@@ -1,496 +1,521 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-  background-color: rgba(47, 75, 86, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    background-color: rgba(47, 75, 86, 1);
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
-  box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* ===== ЛОГОТИП ===== */
+/* ===== ЛОГОТИП (ТОЛЬКО ДЕСКТОП) ===== */
 .logoLink {
-  display: flex;
-  align-items: center;
-  width: 238px;
-  height: 190px;
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    width: 238px;
+    height: 190px;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
 }
 
 .logo {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
-/* ===== ДЕСКТОП НАВИГАЦИЯ ===== */
+/* ===== ДЕСКТОПНАЯ НАВИГАЦИЯ ===== */
 .desktopNav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 }
 
 .navLink {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 14px;
-  padding: 5px 0;
-  position: relative;
-  transition: color 0.3s ease;
-  white-space: nowrap;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .navLink::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #ff9045;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ff9045;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navLink:hover {
-  color: #ffffffbe;
+    color: #ffffffbe;
 }
 
 .navLink:hover::after,
 .navLink.active::after {
-  width: 100%;
+    width: 100%;
 }
 
 .navLink.active {
-  color: #ffcc00;
+    color: #ffcc00;
 }
 
-/* ===== ДЕСКТОП ТЕЛЕФОН ===== */
+/* ===== ДЕСКТОПНЫЙ ТЕЛЕФОН ===== */
 .desktopPhone {
-  display: flex;
-  align-items: center;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 18px;
-  white-space: nowrap;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .phone {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.3s ease;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
 
 .phone:hover {
-  color: #e6792c;
+    color: #e6792c;
 }
 
 .phone::after {
-  display: none;
-  content: none;
+    display: none;
+    content: none;
 }
 
-/* ===== БУРГЕР-МЕНЮ (ТОЛЬКО МОБИЛЬНЫЕ) ===== */
+/* ===== МОБИЛЬНЫЙ ТЕЛЕФОН (СПРАВА) ===== */
+.mobilePhone {
+    display: none;
+    align-items: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ===== БУРГЕР-КНОПКА (МОБИЛЬНАЯ) ===== */
 .burgerButton {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1200;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1200;
+}
+
+.burgerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
 }
 
 .burgerLine {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-.burgerOpen .burgerLine:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+.burgerText {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.burgerOpen .burgerLine:nth-child(2) {
-  opacity: 0;
+/* Анимация бургера в крестик при открытом меню */
+.burgerOpen .burgerIcon .burgerLine:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-.burgerOpen .burgerLine:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+.burgerOpen .burgerIcon .burgerLine:nth-child(2) {
+    opacity: 0;
 }
 
-/* ===== МОБИЛЬНОЕ МЕНЮ ===== */
-.mobileMenu {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 85%;
-  max-width: 400px;
-  height: 100vh;
-  z-index: 1150;
-  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mobileMenuOpen {
-  right: 0;
-}
-
-.mobileMenuContent {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: rgba(47, 75, 86, 0.98);
-  backdrop-filter: blur(10px);
-  padding: 80px 20px 40px;
-  overflow-y: auto;
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+.burgerOpen .burgerIcon .burgerLine:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ===== ОВЕРЛЕЙ ===== */
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  z-index: 1149;
-  animation: fadeIn 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1149;
+    animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== МОБИЛЬНОЕ МЕНЮ (ВЫЕЗЖАЕТ СЛЕВА) ===== */
+.mobileMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    max-width: 85%;
+    height: 100vh;
+    z-index: 1150;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileMenuOpen {
+    left: 0;
+}
+
+.mobileMenuContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(243, 247, 248);
+    padding: 100px 20px 40px;
+    overflow-y: auto;
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== МОБИЛЬНАЯ НАВИГАЦИЯ ===== */
 .mobileNav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .mobileNavLink {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 16px 0;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+    color: rgb(47, 75, 86);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 16px 0;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid rgba(47, 75, 86, 0.1);
+    transition: all 0.3s ease;
 }
 
 .mobileNavLink:hover {
-  background: rgba(230, 121, 44, 0.2);
+    color: #e6792c;
+    background: rgba(230, 121, 44, 0.05);
 }
 
 .mobileNavLink.active {
-  color: #ffcc00;
-  background: rgba(255, 204, 0, 0.1);
+    color: #e6792c;
+    font-weight: 700;
 }
 
-/* ===== МОБИЛЬНЫЙ ТЕЛЕФОН ===== */
+/* ===== МОБИЛЬНЫЙ ТЕЛЕФОН В МЕНЮ ===== */
 .mobilePhoneWrapper {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(47, 75, 86, 0.2);
+    text-align: left;
 }
 
-.mobilePhone {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 30px;
-  background: rgba(230, 121, 44, 0.2);
-  transition: all 0.3s ease;
+.mobileMenuPhone {
+    display: inline-block;
+    color: rgb(47, 75, 86);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 0;
+    transition: color 0.3s ease;
 }
 
-.mobilePhone:hover {
-  background: #e6792c;
+.mobileMenuPhone:hover {
+    color: #e6792c;
 }
 
-/* ===== ФОКУС ===== */
+/* ===== СОСТОЯНИЯ ФОКУСА ===== */
 .navLink:focus-visible,
 .phone:focus-visible,
 .logoLink:focus-visible,
 .burgerButton:focus-visible,
 .mobileNavLink:focus-visible,
-.mobilePhone:focus-visible {
-  outline: 2px solid #ff9045;
-  outline-offset: 2px;
-  border-radius: 2px;
+.mobileMenuPhone:focus-visible {
+    outline: 2px solid #ff9045;
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* ============================================ */
-/* ===== ДЕСКТОП АДАПТИВНОСТЬ ===== */
+/* ===== АДАПТИВНОСТЬ (ДЕСКТОП) ===== */
 /* ============================================ */
 
-/* Большие десктопы: 1400px+ */
 @media (min-width: 1400px) {
-  .container {
-    max-width: 1300px;
-  }
-  
-  .desktopNav {
-    gap: 50px;
-  }
-  
-  .navLink {
-    font-size: 15px;
-  }
-  
-  .desktopPhone {
-    font-size: 19px;
-  }
+    .container {
+        max-width: 1300px;
+    }
+
+    .desktopNav {
+        gap: 50px;
+    }
+
+    .navLink {
+        font-size: 15px;
+    }
+
+    .desktopPhone {
+        font-size: 19px;
+    }
 }
 
-/* Десктоп: 1200px - 1399px */
 @media (max-width: 1200px) {
-  .container {
-    max-width: 960px;
-  }
-  
-  .desktopNav {
-    gap: 30px;
-  }
-  
-  .logoLink {
-    width: 200px;
-    height: 160px;
-  }
+    .container {
+        max-width: 960px;
+    }
+
+    .desktopNav {
+        gap: 30px;
+    }
+
+    .logoLink {
+        width: 200px;
+        height: 160px;
+    }
 }
 
-/* Ноутбуки: 992px - 1199px */
 @media (max-width: 992px) {
-  .header {
-    height: 80px;
-  }
-  
-  .container {
-    max-width: 720px;
-  }
-  
-  .logoLink {
-    width: 160px;
-    height: 130px;
-  }
-  
-  .desktopNav {
-    gap: 20px;
-  }
-  
-  .navLink {
-    font-size: 13px;
-  }
-  
-  .desktopPhone {
-    font-size: 16px;
-  }
+    .header {
+        height: 80px;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    .logoLink {
+        width: 160px;
+        height: 130px;
+    }
+
+    .desktopNav {
+        gap: 20px;
+    }
+
+    .navLink {
+        font-size: 13px;
+    }
+
+    .desktopPhone {
+        font-size: 16px;
+    }
 }
 
-/* ===== ПЛАНШЕТЫ И МОБИЛЬНЫЕ: 768px И НИЖЕ ===== */
+/* ============================================ */
+/* ===== МОБИЛЬНАЯ АДАПТИВНОСТЬ (768px И НИЖЕ) ===== */
+/* ============================================ */
+
 @media (max-width: 768px) {
-  .header {
-    height: 70px;
-    padding: 5px 0;
-  }
-  
-  .container {
-    padding: 0 16px;
-  }
-  
-  /* Логотип */
-  .logoLink {
-    width: 120px;
-    height: 100px;
-  }
-  
-  /* Прячем десктопную навигацию и телефон */
-  .desktopNav,
-  .desktopPhone {
-    display: none;
-  }
-  
-  /* Показываем бургер */
-  .burgerButton {
-    display: flex;
-  }
-  
-  /* Показываем мобильное меню */
-  .mobileMenu {
-    display: block;
-  }
+    .header {
+        height: 70px;
+        padding: 5px 0;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Скрываем логотип на мобильных */
+    .logoLink {
+        display: none;
+    }
+
+    /* Скрываем десктопные элементы */
+    .desktopNav,
+    .desktopPhone {
+        display: none;
+    }
+
+    /* Показываем мобильные элементы */
+    .burgerButton {
+        display: flex;
+    }
+
+    .mobilePhone {
+        display: flex;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+
+    /* Кнопка меню слева, телефон справа */
+    .burgerButton {
+        margin-right: auto;
+    }
+
+    .mobilePhone {
+        margin-left: auto;
+    }
 }
 
-/* Мобильные L: 576px - 767px */
 @media (max-width: 576px) {
-  .header {
-    height: 65px;
-  }
-  
-  .logoLink {
-    width: 100px;
-    height: 80px;
-  }
-  
-  .burgerButton {
-    width: 28px;
-    height: 19px;
-  }
-  
-  .burgerLine {
-    height: 2.5px;
-  }
-  
-  .mobileMenu {
-    width: 90%;
-  }
-  
-  .mobileNavLink {
-    font-size: 16px;
-    padding: 14px 0;
-  }
-  
-  .mobilePhone {
-    font-size: 18px;
-    padding: 10px 20px;
-  }
+    .header {
+        height: 65px;
+    }
+
+    .burgerIcon {
+        width: 22px;
+        height: 16px;
+    }
+
+    .burgerLine {
+        height: 2px;
+    }
+
+    .burgerText {
+        font-size: 14px;
+    }
+
+    .mobilePhone {
+        font-size: 14px;
+    }
+
+    .mobileMenu {
+        width: 280px;
+        max-width: 85%;
+    }
+
+    .mobileNavLink {
+        font-size: 16px;
+        padding: 14px 0;
+    }
+
+    .mobileMenuPhone {
+        font-size: 18px;
+    }
 }
 
-/* Мобильные S: 480px и ниже */
 @media (max-width: 480px) {
-  .logoLink {
-    width: 90px;
-    height: 70px;
-  }
-  
-  .burgerButton {
-    width: 26px;
-    height: 18px;
-  }
-  
-  .burgerLine {
-    height: 2px;
-  }
-  
-  .mobileNavLink {
-    font-size: 15px;
-    padding: 12px 0;
-  }
-  
-  .mobilePhone {
-    font-size: 16px;
-    padding: 10px 16px;
-  }
+    .burgerIcon {
+        width: 20px;
+        height: 14px;
+    }
+
+    .burgerText {
+        font-size: 13px;
+    }
+
+    .mobilePhone {
+        font-size: 13px;
+    }
+
+    .mobileNavLink {
+        font-size: 15px;
+        padding: 12px 0;
+    }
+
+    .mobileMenuPhone {
+        font-size: 16px;
+    }
 }
 
-/* Мобильные XS: 360px и ниже */
 @media (max-width: 360px) {
-  .logoLink {
-    width: 80px;
-    height: 65px;
-  }
-  
-  .burgerButton {
-    width: 24px;
-    height: 16px;
-  }
-  
-  .mobileNavLink {
-    font-size: 14px;
-    padding: 10px 0;
-  }
-  
-  .mobilePhone {
-    font-size: 15px;
-    padding: 8px 14px;
-  }
+    .burgerText {
+        font-size: 12px;
+    }
+
+    .mobilePhone {
+        font-size: 12px;
+    }
+
+    .mobileNavLink {
+        font-size: 14px;
+        padding: 10px 0;
+    }
 }
 
-/* Альбомная ориентация на мобильных */
+/* ===== АЛЬБОМНАЯ ОРИЕНТАЦИЯ ===== */
 @media (max-width: 900px) and (orientation: landscape) {
-  .mobileMenuContent {
-    padding: 60px 20px 30px;
-  }
-  
-  .mobileNavLink {
-    padding: 10px 0;
-    font-size: 16px;
-  }
-  
-  .mobilePhoneWrapper {
-    margin-top: 20px;
-    padding-top: 15px;
-  }
+    .mobileMenuContent {
+        padding: 80px 20px 30px;
+    }
+
+    .mobileNavLink {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .mobilePhoneWrapper {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
 }
 
 /* ===== ТАЧ-УСТРОЙСТВА ===== */
 @media (hover: none) and (pointer: coarse) {
-  .burgerButton {
-    padding: 10px;
-  }
-  
-  .mobileNavLink,
-  .mobilePhone {
-    padding: 15px 0;
-  }
+    .burgerButton {
+        padding: 10px;
+    }
+
+    .mobileNavLink,
+    .mobileMenuPhone {
+        padding: 14px 0;
+    }
 }
 
 /* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
-  .mobileMenu,
-  .burgerLine,
-  .overlay,
-  .logoLink,
-  .navLink,
-  .mobileNavLink,
-  .mobilePhone {
-    transition: none;
-  }
-  
-  .mobileMenuOpen {
-    right: 0;
-  }
+    .mobileMenu,
+    .burgerLine,
+    .overlay,
+    .logoLink,
+    .navLink,
+    .mobileNavLink,
+    .mobileMenuPhone {
+        transition: none;
+    }
+
+    .mobileMenuOpen {
+        left: 0;
+    }
 }

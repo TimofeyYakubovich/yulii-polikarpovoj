@@ -19,8 +19,6 @@ export const Header = () => {
         const handleResize = () => {
             const mobile = window.innerWidth <= 768;
             setIsMobile(mobile);
-            
-            // Закрываем меню при переходе на десктоп
             if (!mobile) {
                 setIsMenuOpen(false);
             }
@@ -30,7 +28,6 @@ export const Header = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Блокируем скролл при открытом меню на мобильных
     useEffect(() => {
         if (isMobile && isMenuOpen) {
             document.body.style.overflow = 'hidden';
@@ -46,59 +43,60 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.container}>
-                {/* Логотип */}
-                <NavLink 
-                    to='/' 
-                    end 
+
+                {/* Логотип (только на десктопе) */}
+                <NavLink
+                    to="/"
+                    end
                     className={styles.logoLink}
                     aria-label="На главную страницу"
                     onClick={closeMenu}
                 >
-                    <img 
-                        src={logo} 
-                        alt="Психологический центр Юлии Дубровской" 
+                    <img
+                        src={logo}
+                        alt="Психологический центр Юлии Дубровской"
                         className={styles.logo}
                     />
                 </NavLink>
 
-                {/* Навигация - десктоп версия */}
+                {/* Десктопная навигация */}
                 <nav className={styles.desktopNav} aria-label="Основное меню">
-                    <NavLink 
-                        to='/' 
-                        end 
-                        className={({ isActive }) => 
+                    <NavLink
+                        to="/"
+                        end
+                        className={({ isActive }) =>
                             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                         }
                     >
                         Главная
                     </NavLink>
-                    <NavLink 
-                        to='/services' 
-                        className={({ isActive }) => 
+                    <NavLink
+                        to="/services"
+                        className={({ isActive }) =>
                             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                         }
                     >
                         Услуги
                     </NavLink>
-                    <NavLink 
-                        to='/promotions' 
-                        className={({ isActive }) => 
+                    <NavLink
+                        to="/promotions"
+                        className={({ isActive }) =>
                             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                         }
                     >
                         Акции и скидки
                     </NavLink>
-                    <NavLink 
-                        to='/price' 
-                        className={({ isActive }) => 
+                    <NavLink
+                        to="/price"
+                        className={({ isActive }) =>
                             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                         }
                     >
                         Стоимость
                     </NavLink>
-                    <NavLink 
-                        to='/contacts' 
-                        className={({ isActive }) => 
+                    <NavLink
+                        to="/contacts"
+                        className={({ isActive }) =>
                             isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                         }
                     >
@@ -106,10 +104,10 @@ export const Header = () => {
                     </NavLink>
                 </nav>
 
-                {/* Контактный телефон - десктоп версия */}
+                {/* Десктопный телефон */}
                 <div className={styles.desktopPhone}>
-                    <a 
-                        href='tel:+375336057939' 
+                    <a
+                        href="tel:+375336057939"
                         className={styles.phone}
                         aria-label="Позвонить нам"
                     >
@@ -117,72 +115,81 @@ export const Header = () => {
                     </a>
                 </div>
 
-                {/* Кнопка бургер-меню (только на мобильных) */}
-                <button 
+                {/* Мобильная кнопка меню (бургер + текст) */}
+                <button
                     className={`${styles.burgerButton} ${isMenuOpen ? styles.burgerOpen : ''}`}
                     onClick={toggleMenu}
-                    aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
+                    aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
                     aria-expanded={isMenuOpen}
                 >
-                    <span className={styles.burgerLine}></span>
-                    <span className={styles.burgerLine}></span>
-                    <span className={styles.burgerLine}></span>
+                    <span className={styles.burgerIcon}>
+                        <span className={styles.burgerLine}></span>
+                        <span className={styles.burgerLine}></span>
+                        <span className={styles.burgerLine}></span>
+                    </span>
+                    <span className={styles.burgerText}>Меню</span>
                 </button>
 
-                {/* Мобильное меню */}
+                {/* Мобильный телефон (справа) */}
+                <div className={styles.mobilePhone}>
+                    <a
+                        href="tel:+375336057939"
+                        className={styles.phone}
+                        aria-label="Позвонить нам"
+                    >
+                        +375 (33) 605-79-39
+                    </a>
+                </div>
+
+                {/* Оверлей */}
+                {isMobile && isMenuOpen && (
+                    <div className={styles.overlay} onClick={closeMenu} />
+                )}
+
+                {/* Мобильное меню (выезжает слева) */}
                 <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
-                    {/* Оверлей */}
-                    {isMobile && isMenuOpen && (
-                        <div 
-                            className={styles.overlay} 
-                            onClick={closeMenu}
-                            aria-hidden="true"
-                        />
-                    )}
-                    
-                    {/* Контент мобильного меню */}
                     <div className={styles.mobileMenuContent}>
                         <nav className={styles.mobileNav} aria-label="Мобильное меню">
-                            <NavLink 
-                                to='/' 
-                                end 
-                                className={({ isActive }) => 
+                            <NavLink
+                                to="/"
+                                end
+                                className={({ isActive }) =>
                                     isActive ? `${styles.mobileNavLink} ${styles.active}` : styles.mobileNavLink
                                 }
                                 onClick={closeMenu}
                             >
                                 Главная
                             </NavLink>
-                            <NavLink 
-                                to='/services' 
-                                className={({ isActive }) => 
+                            <NavLink
+                                to="/services"
+                                className={({ isActive }) =>
                                     isActive ? `${styles.mobileNavLink} ${styles.active}` : styles.mobileNavLink
                                 }
                                 onClick={closeMenu}
                             >
                                 Услуги
                             </NavLink>
-                            <NavLink 
-                                to='/promotions' 
-                                className={({ isActive }) => 
+                            <NavLink
+                                to="/promotions"
+                                className={({ isActive }) =>
                                     isActive ? `${styles.mobileNavLink} ${styles.active}` : styles.mobileNavLink
                                 }
                                 onClick={closeMenu}
                             >
                                 Акции и скидки
                             </NavLink>
-                            <NavLink 
-                                to='/price' 
-                                className={({ isActive }) => 
+                            <NavLink
+                                to="/price"
+                                className={({ isActive }) =>
                                     isActive ? `${styles.mobileNavLink} ${styles.active}` : styles.mobileNavLink
                                 }
                                 onClick={closeMenu}
                             >
                                 Стоимость
                             </NavLink>
-                            <NavLink 
-                                to='/contacts' 
-                                className={({ isActive }) => 
+                            <NavLink
+                                to="/contacts"
+                                className={({ isActive }) =>
                                     isActive ? `${styles.mobileNavLink} ${styles.active}` : styles.mobileNavLink
                                 }
                                 onClick={closeMenu}
@@ -190,12 +197,10 @@ export const Header = () => {
                                 Контакты
                             </NavLink>
                         </nav>
-                        
-                        {/* Телефон в мобильном меню */}
                         <div className={styles.mobilePhoneWrapper}>
-                            <a 
-                                href='tel:+375336057939' 
-                                className={styles.mobilePhone}
+                            <a
+                                href="tel:+375336057939"
+                                className={styles.mobileMenuPhone}
                                 onClick={closeMenu}
                             >
                                 +375 (33) 605-79-39
@@ -203,6 +208,7 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
         </header>
     );
